@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeraByte Labs - Growing Tomorrow's Leaders Through Play and Story</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.5;
+            color: #1d1d1f;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            height: 44px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGVsbGlwc2UgY3g9IjE2IiBjeT0iMTgiIHJ4PSIxMiIgcnk9IjEwIiBmaWxsPSIjZjhmOWZhIi8+CjxlbGxpcHNlIGN4PSIxMiIgY3k9IjE1IiByeD0iMiIgcnk9IjMiIGZpbGw9IiMwMDAiLz4KPGVsbGlwc2UgY3g9IjIwIiBjeT0iMTUiIHJ4PSIyIiByeT0iMyIgZmlsbD0iIzAwMCIvPgo8cGF0aCBkPSJNNSAxNCBRIDIgMTAgNSA2IiBzdHJva2U9IiM0YTkwZTIiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPgo8cGF0aCBkPSJNMjcgMTQgUSAzMCAxMCAyNyA2IiBzdHJva2U9IiM0YTkwZTIiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .brand-name {
+            font-size: 21px;
+            font-weight: 600;
+            color: #1d1d1f;
+            letter-spacing: -0.022em;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #1d1d1f;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 24px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 48px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxlbGxpcHNlIGN4PSI3NSIgY3k9IjgwIiByeD0iNDAiIHJ5PSIzNSIgZmlsbD0iI2Y4ZjlmYSIvPgo8ZWxsaXBzZSBjeD0iNjAiIGN5PSI3MCIgcng9IjMiIHJ5PSI0IiBmaWxsPSIjMDAwIi8+CjxlbGxpcHNlIGN4PSI5MCIgY3k9IjcwIiByeD0iMyIgcnk9IjQiIGZpbGw9IiMwMDAiLz4KPHA8UGF0aCBkPSJNMzAgNjUgUSAxNSA1MCAyNSAzNSIgc3Ryb2tlPSIjNGE5MGUyIiBzdHJva2Utd2lkdGg9IjUiIGZpbGw9Im5vbmUiLz4KPHA8UGF0aCBkPSJNMTIwIDY1IFEgMTM1IDUwIDEyNSAzNSIgc3Ryb2tlPSIjNGE5MGUyIiBzdHJva2Utd2lkdGg9IjUiIGZpbGw9Im5vbmUiLz4KPHA8UGF0aCBkPSJNNjUgODUgUSA3NSA5NSA4NSA4NSIgc3Ryb2tlPSIjMmMzZTUwIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz4KPC9zdmc+Cg==');
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 24px;
+            letter-spacing: -0.025em;
+            line-height: 1.08;
+        }
+
+        .hero-tagline {
+            font-size: 28px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 48px;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #007aff;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #0056cc;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Features Section */
+        .features {
+            background: #f5f5f7;
+            padding: 120px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            letter-spacing: -0.025em;
+        }
+
+        .section-subtitle {
+            font-size: 21px;
+            color: #86868b;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 48px 32px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-card p {
+            font-size: 17px;
+            color: #86868b;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+        }
+
+        /* About Section */
+        .about {
+            background: #000;
+            padding: 120px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: -0.025em;
+        }
+
+        .about p {
+            font-size: 21px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+        }
+
+        /* Values Section */
+        .values {
+            background: #f5f5f7;
+            padding: 120px 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 80px;
+            align-items: center;
+        }
+
+        .values-content h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 32px;
+            letter-spacing: -0.025em;
+        }
+
+        .values-list {
+            list-style: none;
+            space-y: 24px;
+        }
+
+        .values-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .value-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .value-text {
+            flex: 1;
+        }
+
+        .value-text h4 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .value-text p {
+            font-size: 17px;
+            color: #86868b;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+        }
+
+        .values-visual {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 24px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1d1d1f;
+            color: #fff;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #86868b;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #424245;
+            padding-top: 24px;
+            text-align: center;
+            color: #86868b;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-tagline {
+                font-size: 21px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+
+        /* Smooth animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo-mark"></div>
+                <span class="brand-name">PeraByte Labs</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#values">Values</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-logo"></div>
+            <h1>PeraByte Labs</h1>
+            <p class="hero-tagline">Growing Tomorrow's Leaders Through Play and Story</p>
+            <div class="hero-buttons">
+                <a href="#features" class="btn btn-primary">Explore Products</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Designed for Tomorrow's World</h2>
+                <p class="section-subtitle">Building character and skills through engaging experiences</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Interactive Learning Games</h3>
+                    <p>Thoughtfully designed games that build learning agility, critical thinking, curiosity, and problem-solving skills while fostering self-awareness and perseverance through engaging play experiences.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📖</div>
+                    <h3>Character-Building Stories</h3>
+                    <p>Beautifully crafted narratives that develop empathy, social influence, integrity, and moral reasoning through compelling characters who navigate complex social and emotional challenges.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Future-Ready Skills</h3>
+                    <p>Developing creativity, emotional intelligence, adaptability, and human-centered abilities that enhance learning agility and social influence in an AI-powered world.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Research-Based Content</h3>
+                    <p>Evidence-based resources grounded in cutting-edge research from leading scientists in education, pedagogy, sports psychology, and child development to support informed parenting decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content fade-in">
+                <h2>Our Mission</h2>
+                <p>We believe every child has the potential to become a leader who shapes the future with wisdom and compassion. Through carefully crafted games, stories, and research-based resources, we help parents nurture essential 21st-century skills: learning agility, critical thinking, curiosity, self-awareness, and social influence—the human qualities that no technology can replace.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values" id="values">
+        <div class="container">
+            <div class="values-grid">
+                <div class="values-content fade-in">
+                    <h2>Built on Timeless Values</h2>
+                    <ul class="values-list">
+                        <li>
+                            <div class="value-icon">🧠</div>
+                            <div class="value-text">
+                                <h4>Core Competencies</h4>
+                                <p>Building learning agility, curiosity, critical thinking, self-awareness, and social influence as foundational skills for lifelong success.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="value-icon">🔬</div>
+                            <div class="value-text">
+                                <h4>Research Foundation</h4>
+                                <p>Every product is backed by academic research from leading experts in education, psychology, and child development.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="value-icon">🌱</div>
+                            <div class="value-text">
+                                <h4>Growth Mindset</h4>
+                                <p>Every challenge is an opportunity to learn, adapt, and become stronger than before.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="value-icon">🤝</div>
+                            <div class="value-text">
+                                <h4>Human Connection</h4>
+                                <p>Technology serves humanity best when it strengthens our bonds and understanding of each other.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="values-visual fade-in">
+                    🌟
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Learning Games</a></li>
+                        <li><a href="#">Story Books</a></li>
+                        <li><a href="#">Research Library</a></li>
+                        <li><a href="#">Parent Resources</a></li>
+                        <li><a href="#">Coming Soon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PeraByte Labs. Growing Tomorrow's Leaders Through Play and Story.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 44;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background opacity on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const navbar = document.querySelector('.navbar');
+            
+            if (scrollTop > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'saturate(180%) blur(20px)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.8)';
+                navbar.style.backdropFilter = 'saturate(180%) blur(20px)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
