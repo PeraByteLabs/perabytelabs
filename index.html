@@ -121,34 +121,24 @@
         }
 
         .hero-logo {
-            width: 300px;           /* Changed from 200px */
-            height: 300px;          /* Changed from 200px */
-            margin: 0 auto 0px;    /* Changed from 48px */
-            background: none; /* Remove white background */
-            border-radius: 50%; /* Optional: keep if logo is round */
+            width: 300px;           
+            height: 300px;          
+            margin: 0 auto 0px;    
+            background: none; 
+            border-radius: 50%; 
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: none;  /* Remove or soften shadow */
+            box-shadow: none;  
             background-image: url('logo.png');
             background-size: 60%;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.95; /* Optional: add a subtle transparency */
+            opacity: 0.95; 
             position: relative;
             overflow: hidden;
-        }
-
-        .hero-logo::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle, transparent 45%, rgba(26, 26, 26, 0.1) 70%, rgba(26, 26, 26, 0.8) 85%);
-            pointer-events: none;
-            border-radius: 50%;
+            mask: radial-gradient(circle, black 40%, rgba(0,0,0,0.8) 70%, transparent 90%);
+            -webkit-mask: radial-gradient(circle, black 40%, rgba(0,0,0,0.8) 70%, transparent 90%);
         }
 
         .hero h1 {
