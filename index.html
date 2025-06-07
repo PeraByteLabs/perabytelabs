@@ -135,7 +135,20 @@
             background-repeat: no-repeat;
             background-position: center;
             opacity: 0.95; /* Optional: add a subtle transparency */
+            position: relative;
+            overflow: hidden;
+        }
 
+        .hero-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, transparent 45%, rgba(26, 26, 26, 0.1) 70%, rgba(26, 26, 26, 0.8) 85%);
+            pointer-events: none;
+            border-radius: 50%;
         }
 
         .hero h1 {
