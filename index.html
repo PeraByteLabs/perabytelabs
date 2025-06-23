@@ -1,9 +1,9 @@
-<div class="values-<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeraByte Labs - Growing Tomorrow's Leaders Through Play and Story</title>
+    <title>PeraByte Labs - Growing Tomorrow's Leaders Through the CORE™ Framework</title>
     <style>
         * {
             margin: 0;
@@ -42,31 +42,31 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 24px;
-            height: 44px;
+            height: 64px;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            text-decoration: none;
         }
 
         .logo-mark {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             background-image: url('logo.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            /* Remove background and border styles for blending */
             background-color: transparent;
             box-shadow: none;
             border-radius: 0;
         }
 
         .brand-name {
-            font-size: 21px;
-            font-weight: 600;
+            font-size: 24px;
+            font-weight: 700;
             color: #1d1d1f;
             letter-spacing: -0.022em;
         }
@@ -80,8 +80,8 @@
         .nav-menu a {
             text-decoration: none;
             color: #1d1d1f;
-            font-size: 12px;
-            font-weight: 400;
+            font-size: 16px;
+            font-weight: 500;
             letter-spacing: -0.01em;
             transition: opacity 0.3s ease;
         }
@@ -114,31 +114,44 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             padding: 0 24px;
             z-index: 2;
             position: relative;
         }
 
         .hero-logo {
-            width: 300px;           
-            height: 300px;          
-            margin: 0 auto 0px;    
-            background: none; 
-            border-radius: 50%; 
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 40px;
+            background: none;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: none;  
+            box-shadow: none;
             background-image: url('logo.png');
             background-size: 60%;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.95; 
+            opacity: 0.95;
             position: relative;
             overflow: hidden;
             mask: radial-gradient(circle, black 40%, rgba(0,0,0,0.8) 70%, transparent 90%);
             -webkit-mask: radial-gradient(circle, black 40%, rgba(0,0,0,0.8) 70%, transparent 90%);
+        }
+
+        .framework-badge {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(102, 126, 234, 0.3);
         }
 
         .hero h1 {
@@ -154,9 +167,21 @@
             font-size: 28px;
             font-weight: 400;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 48px;
+            margin-bottom: 20px;
             letter-spacing: -0.01em;
             line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 48px;
+            letter-spacing: -0.01em;
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-buttons {
@@ -168,10 +193,10 @@
 
         .btn {
             padding: 16px 32px;
-            border-radius: 24px;
+            border-radius: 50px;
             text-decoration: none;
             font-size: 17px;
-            font-weight: 400;
+            font-weight: 600;
             transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
             border: none;
             cursor: pointer;
@@ -181,13 +206,14 @@
         }
 
         .btn-primary {
-            background: #007aff;
+            background: #667eea;
             color: #fff;
         }
 
         .btn-primary:hover {
-            background: #0056cc;
-            transform: translateY(-1px);
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
         }
 
         .btn-secondary {
@@ -198,12 +224,12 @@
 
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
-        /* Features Section */
-        .features {
-            background: #f5f5f7;
+        /* Framework Preview Section */
+        .framework-preview {
+            background: #f8f9fb;
             padding: 120px 0;
         }
 
@@ -231,12 +257,64 @@
             color: #86868b;
             font-weight: 400;
             letter-spacing: -0.01em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pillars-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .pillar-card {
+            background: #fff;
+            padding: 40px 24px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .pillar-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .pillar-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 12px;
+        }
+
+        .pillar-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .framework-cta {
+            text-align: center;
+        }
+
+        /* Features Section */
+        .features {
+            background: #fff;
+            padding: 120px 0;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
             gap: 32px;
         }
 
@@ -284,7 +362,7 @@
 
         /* About Section */
         .about {
-            background: #000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 120px 0;
             color: #fff;
             text-align: center;
@@ -304,14 +382,15 @@
 
         .about p {
             font-size: 21px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.6;
             letter-spacing: -0.01em;
+            margin-bottom: 24px;
         }
 
         /* Values Section */
         .values {
-            background: #f5f5f7;
+            background: #f8f9fb;
             padding: 120px 0;
             position: relative;
             overflow: hidden;
@@ -339,16 +418,6 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 80px;
             align-items: center;
-            perspective: 1000px;
-        }
-
-        .values-content {
-            transform: translateZ(50px);
-            transition: transform 0.6s ease;
-        }
-
-        .values-content:hover {
-            transform: translateZ(60px) translateX(-5px);
         }
 
         .values-content h2 {
@@ -357,12 +426,10 @@
             color: #1d1d1f;
             margin-bottom: 32px;
             letter-spacing: -0.025em;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
         }
 
         .values-list {
             list-style: none;
-            space-y: 24px;
         }
 
         .values-list li {
@@ -377,12 +444,11 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            transform: translateZ(0);
         }
 
         .values-list li:hover {
-            transform: translateY(-8px) translateZ(20px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
             background: rgba(255, 255, 255, 0.8);
         }
 
@@ -397,20 +463,10 @@
             flex-shrink: 0;
             margin-top: 4px;
             box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .values-list li:hover .value-icon {
-            transform: scale(1.1) rotateZ(5deg);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .value-text {
-            flex: 1;
         }
 
         .value-text h4 {
-            font-size: 21px;
+            font-size: 18px;
             font-weight: 600;
             color: #1d1d1f;
             margin-bottom: 8px;
@@ -418,8 +474,8 @@
         }
 
         .value-text p {
-            font-size: 17px;
-            color: #86868b;
+            font-size: 16px;
+            color: #666;
             line-height: 1.5;
             letter-spacing: -0.01em;
         }
@@ -427,7 +483,7 @@
         .values-visual {
             background: none;
             border-radius: 24px;
-            height: 100%;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -435,34 +491,9 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            min-height: 400px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             position: relative;
             overflow: hidden;
-            transform: translateZ(30px);
-            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .values-visual::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            border-radius: 24px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .values-visual:hover {
-            transform: translateZ(50px) translateY(-10px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
-        }
-
-        .values-visual:hover::before {
-            opacity: 1;
         }
 
         /* Footer */
@@ -531,7 +562,8 @@
                 font-size: 32px;
             }
 
-            .features-grid {
+            .features-grid,
+            .pillars-preview {
                 grid-template-columns: 1fr;
             }
 
@@ -550,9 +582,14 @@
                 max-width: 280px;
                 justify-content: center;
             }
+
+            .hero-logo {
+                width: 200px;
+                height: 200px;
+            }
         }
 
-        /* Smooth animations */
+        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -569,16 +606,16 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo-section">
+            <a href="index.html" class="logo-section">
                 <div class="logo-mark"></div>
                 <span class="brand-name">PeraByte Labs</span>
-            </div>
+            </a>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
+                <li><a href="framework.html">CORE™ Framework</a></li>
                 <li><a href="#features">Products</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#values">Values</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -587,11 +624,57 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-logo"></div>
+            <div class="framework-badge">Introducing the CORE™ Framework</div>
             <h1>PeraByte Labs</h1>
-            <p class="hero-tagline">Growing Tomorrow's Leaders Through Play and Story</p>
+            <p class="hero-tagline">Growing Tomorrow's Leaders</p>
+            <p class="hero-subtitle">
+                Developing the 12 essential human skills children need to thrive in an AI-powered world through research-backed games, stories, and resources.
+            </p>
             <div class="hero-buttons">
-                <a href="#features" class="btn btn-primary">Explore Products</a>
-                <a href="#about" class="btn btn-secondary">Learn More</a>
+                <a href="framework.html" class="btn btn-primary">Explore CORE™ Framework</a>
+                <a href="#features" class="btn btn-secondary">View Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Preview Section -->
+    <section class="framework-preview">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">The CORE™ Framework</h2>
+                <p class="section-subtitle">
+                    Four pillars organizing 12 essential skills that represent uniquely human capabilities valuable in the AI age
+                </p>
+            </div>
+            
+            <div class="pillars-preview">
+                <div class="pillar-card fade-in">
+                    <span class="pillar-icon">🧠</span>
+                    <h3>Cognitive</h3>
+                    <p>Critical thinking, problem-solving, and creative thinking skills</p>
+                </div>
+                
+                <div class="pillar-card fade-in">
+                    <span class="pillar-icon">🔧</span>
+                    <h3>Operational</h3>
+                    <p>Planning, concentration, and curiosity-driven learning</p>
+                </div>
+                
+                <div class="pillar-card fade-in">
+                    <span class="pillar-icon">🤝</span>
+                    <h3>Relational</h3>
+                    <p>Communication, teamwork, and conflict resolution</p>
+                </div>
+                
+                <div class="pillar-card fade-in">
+                    <span class="pillar-icon">💪</span>
+                    <h3>Emotional</h3>
+                    <p>Self-awareness, empathy, and perseverance</p>
+                </div>
+            </div>
+            
+            <div class="framework-cta fade-in">
+                <a href="framework.html" class="btn btn-primary">Discover All 12 Skills</a>
             </div>
         </div>
     </section>
@@ -600,29 +683,33 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 class="section-title">Designed for Tomorrow's World</h2>
-                <p class="section-subtitle">Building character and skills through engaging experiences</p>
+                <h2 class="section-title">Products Built on CORE™</h2>
+                <p class="section-subtitle">Each product is carefully designed to develop specific skills within our research-backed framework</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🎮</div>
-                    <h3>Interactive Learning Games</h3>
-                    <p>Thoughtfully designed games that build learning agility, critical thinking, curiosity, and problem-solving skills while fostering self-awareness and perseverance through engaging play experiences.</p>
+                    <h3>Learning Games</h3>
+                    <p>Interactive games that build cognitive and operational skills through engaging challenges that develop critical thinking, problem-solving, planning, and concentration.</p>
+                    <a href="learning-games.html" class="btn btn-secondary" style="margin-top: 20px; font-size: 14px; padding: 12px 24px;">Coming Soon</a>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">📖</div>
-                    <h3>Character-Building Stories</h3>
-                    <p>Beautifully crafted narratives that develop empathy, social influence, integrity, and moral reasoning through compelling characters who navigate complex social and emotional challenges.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Future-Ready Skills</h3>
-                    <p>Developing creativity, emotional intelligence, adaptability, and human-centered abilities that enhance learning agility and social influence in an AI-powered world.</p>
+                    <h3>Character Stories</h3>
+                    <p>Thoughtfully crafted narratives that develop relational and emotional skills through characters who navigate complex social and moral challenges.</p>
+                    <a href="story-books.html" class="btn btn-secondary" style="margin-top: 20px; font-size: 14px; padding: 12px 24px;">Coming Soon</a>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🔬</div>
-                    <h3>Research-Based Content</h3>
-                    <p>Evidence-based resources grounded in cutting-edge research from leading scientists in education, pedagogy, sports psychology, and child development to support informed parenting decisions.</p>
+                    <h3>Research Library</h3>
+                    <p>Evidence-based resources grounded in cutting-edge research from leading scientists in education, psychology, and child development.</p>
+                    <a href="research-library.html" class="btn btn-secondary" style="margin-top: 20px; font-size: 14px; padding: 12px 24px;">Coming Soon</a>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Parent Resources</h3>
+                    <p>Comprehensive guides and tools to empower parents with knowledge and confidence to nurture their children's development using the CORE™ Framework.</p>
+                    <a href="parent-resources.html" class="btn btn-secondary" style="margin-top: 20px; font-size: 14px; padding: 12px 24px;">Coming Soon</a>
                 </div>
             </div>
         </div>
@@ -633,7 +720,11 @@
         <div class="container">
             <div class="about-content fade-in">
                 <h2>Our Mission</h2>
-                <p>We believe every child has the potential to become a leader who shapes the future with wisdom and compassion. Through carefully crafted games, stories, and research-based resources, we help parents nurture essential 21st-century skills: learning agility, critical thinking, curiosity, self-awareness, and social influence—the human qualities that no technology can replace.</p>
+                <p>We believe every child has the potential to become a leader who shapes the future with wisdom and compassion. In an age where artificial intelligence handles routine tasks, the most valuable skills are uniquely human: creativity, empathy, critical thinking, and emotional intelligence.</p>
+                <p>Through the CORE™ Framework—a synthesis of 20+ leading research frameworks—we help parents nurture these essential capabilities that no technology can replace. Our products are designed with growth mindset principles, ensuring children develop not just skills, but the love of learning that drives lifelong success.</p>
+                <div style="margin-top: 40px;">
+                    <a href="framework.html" class="btn btn-primary">Learn About Our Research</a>
+                </div>
             </div>
         </div>
     </section>
@@ -648,29 +739,29 @@
                         <li>
                             <div class="value-icon">🧠</div>
                             <div class="value-text">
-                                <h4>Core Competencies</h4>
-                                <p>Building learning agility, curiosity, critical thinking, self-awareness, and social influence as foundational skills for lifelong success.</p>
+                                <h4>Human-Centered Skills</h4>
+                                <p>Focusing on capabilities that make us uniquely human: creativity, empathy, critical thinking, and emotional intelligence—skills that become more valuable as AI advances.</p>
                             </div>
                         </li>
                         <li>
                             <div class="value-icon">🔬</div>
                             <div class="value-text">
                                 <h4>Research Foundation</h4>
-                                <p>Every product is backed by academic research from leading experts in education, psychology, and child development.</p>
+                                <p>Every product is backed by rigorous academic research from leading experts in education, psychology, and child development, synthesized into actionable insights.</p>
                             </div>
                         </li>
                         <li>
                             <div class="value-icon">🌱</div>
                             <div class="value-text">
                                 <h4>Growth Mindset</h4>
-                                <p>Every challenge is an opportunity to learn, adapt, and become stronger than before.</p>
+                                <p>Built on Carol Dweck's research showing that abilities can be developed through dedication and hard work, creating love of learning and resilience.</p>
                             </div>
                         </li>
                         <li>
                             <div class="value-icon">🤝</div>
                             <div class="value-text">
-                                <h4>Human Connection</h4>
-                                <p>Technology serves humanity best when it strengthens our bonds and understanding of each other.</p>
+                                <h4>Future-Ready</h4>
+                                <p>Preparing children for a world where human skills complement AI, emphasizing capabilities identified by the World Economic Forum as essential for 2030 and beyond.</p>
                             </div>
                         </li>
                     </ul>
@@ -681,18 +772,37 @@
         </div>
     </section>
 
+    <!-- Newsletter CTA -->
+    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 80px 0; color: white; text-align: center;">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 16px;">Stay Updated</h2>
+                <p style="font-size: 18px; margin-bottom: 32px; opacity: 0.9;">Get early access to our products and the latest insights on child development and education research.</p>
+                <a href="newsletter.html" class="btn" style="background: white; color: #667eea; font-weight: 600;">Join Our Newsletter</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer" id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
+                    <h4>CORE™ Framework</h4>
+                    <ul class="footer-links">
+                        <li><a href="framework.html">Overview</a></li>
+                        <li><a href="framework.html#skills">12 Essential Skills</a></li>
+                        <li><a href="resources.html">Research & Resources</a></li>
+                        <li><a href="framework.html#research">Why These Skills</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
                     <h4>Products</h4>
                     <ul class="footer-links">
                         <li><a href="learning-games.html">Learning Games</a></li>
-                        <li><a href="story-books.html">Story Books</a></li>
+                        <li><a href="story-books.html">Character Stories</a></li>
                         <li><a href="research-library.html">Research Library</a></li>
                         <li><a href="parent-resources.html">Parent Resources</a></li>
-                        <li><a href="newsletter.html">Coming Soon</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -701,19 +811,20 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#about">Our Mission</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Newsletter</h4>
+                    <h4>Connect</h4>
                     <ul class="footer-links">
                         <li><a href="newsletter.html">Subscribe for Updates</a></li>
-                        <li><a href="newsletter.html">Latest News</a></li>
                         <li><a href="newsletter.html">Educational Tips</a></li>
+                        <li><a href="contact.html">Partnership Opportunities</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 PeraByte Labs. Growing Tomorrow's Leaders Through Play and Story.</p>
+                <p>&copy; 2025 PeraByte Labs. Growing Tomorrow's Leaders Through the CORE™ Framework.</p>
             </div>
         </div>
     </footer>
@@ -725,7 +836,7 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const headerOffset = 44;
+                    const headerOffset = 64;
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                     
@@ -756,20 +867,16 @@
         });
 
         // Navbar background opacity on scroll
-        let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const navbar = document.querySelector('.navbar');
             
-            if (scrollTop > 100) {
+            if (window.scrollY > 100) {
                 navbar.style.background = 'rgba(255, 255, 255, 0.95)';
                 navbar.style.backdropFilter = 'saturate(180%) blur(20px)';
             } else {
                 navbar.style.background = 'rgba(255, 255, 255, 0.8)';
                 navbar.style.backdropFilter = 'saturate(180%) blur(20px)';
             }
-            
-            lastScrollTop = scrollTop;
         });
     </script>
 </body>

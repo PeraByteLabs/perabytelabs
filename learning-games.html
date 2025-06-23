@@ -43,19 +43,19 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 24px;
-            height: 44px;
+            height: 64px;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             text-decoration: none;
         }
 
         .logo-mark {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             background-image: url('logo.png');
             background-size: contain;
             background-repeat: no-repeat;
@@ -66,8 +66,8 @@
         }
 
         .brand-name {
-            font-size: 21px;
-            font-weight: 600;
+            font-size: 24px;
+            font-weight: 700;
             color: #1d1d1f;
             letter-spacing: -0.022em;
         }
@@ -81,8 +81,8 @@
         .nav-menu a {
             text-decoration: none;
             color: #1d1d1f;
-            font-size: 12px;
-            font-weight: 400;
+            font-size: 16px;
+            font-weight: 500;
             letter-spacing: -0.01em;
             transition: opacity 0.3s ease;
         }
@@ -91,8 +91,8 @@
             opacity: 0.6;
         }
 
-        /* Coming Soon Section */
-        .coming-soon {
+        /* Hero Section */
+        .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -100,10 +100,10 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            padding: 100px 24px 50px;
+            padding: 120px 24px 50px;
         }
 
-        .coming-soon::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -114,10 +114,23 @@
             pointer-events: none;
         }
 
-        .coming-soon-content {
-            max-width: 800px;
+        .hero-content {
+            max-width: 900px;
             z-index: 2;
             position: relative;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(102, 126, 234, 0.3);
         }
 
         .product-icon {
@@ -133,7 +146,7 @@
             box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
         }
 
-        .coming-soon h1 {
+        .hero h1 {
             font-size: 64px;
             font-weight: 700;
             color: #fff;
@@ -142,7 +155,7 @@
             line-height: 1.08;
         }
 
-        .coming-soon-tagline {
+        .hero-tagline {
             font-size: 28px;
             font-weight: 400;
             color: rgba(255, 255, 255, 0.8);
@@ -151,7 +164,7 @@
             line-height: 1.2;
         }
 
-        .coming-soon-description {
+        .hero-description {
             font-size: 21px;
             color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
@@ -159,6 +172,153 @@
             letter-spacing: -0.01em;
         }
 
+        /* Skills Focus Section */
+        .skills-focus {
+            background: #f8f9fb;
+            padding: 100px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Game Examples Section */
+        .game-examples {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .example-card {
+            background: linear-gradient(135deg, #f8f9fb 0%, #fff 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #e1e8ed;
+            transition: all 0.3s ease;
+        }
+
+        .example-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .example-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .example-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .example-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1d1d1f;
+        }
+
+        .example-card p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .example-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Notify Form */
         .notify-form {
             display: flex;
             gap: 16px;
@@ -170,7 +330,7 @@
         .email-input {
             padding: 16px 24px;
             border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 24px;
+            border-radius: 50px;
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
             font-size: 17px;
@@ -190,7 +350,7 @@
 
         .notify-btn {
             padding: 16px 32px;
-            border-radius: 24px;
+            border-radius: 50px;
             background: #007aff;
             color: #fff;
             border: none;
@@ -242,11 +402,11 @@
                 display: none;
             }
 
-            .coming-soon h1 {
+            .hero h1 {
                 font-size: 40px;
             }
 
-            .coming-soon-tagline {
+            .hero-tagline {
                 font-size: 21px;
             }
 
@@ -270,6 +430,10 @@
                 width: 100%;
                 max-width: 300px;
             }
+
+            .section-title {
+                font-size: 32px;
+            }
         }
     </style>
 </head>
@@ -283,21 +447,22 @@
             </a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="framework.html">CORE™ Framework</a></li>
                 <li><a href="index.html#features">Products</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#values">Values</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon">
-        <div class="coming-soon-content">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="product-badge">CORE™ Framework Product</div>
             <div class="product-icon">🎮</div>
             <h1>Learning Games</h1>
-            <p class="coming-soon-tagline">Interactive Adventures Coming Soon</p>
-            <p class="coming-soon-description">
+            <p class="hero-tagline">Interactive Adventures Coming Soon</p>
+            <p class="hero-description">
                 We're crafting thoughtfully designed games that build learning agility, critical thinking, curiosity, and problem-solving skills while fostering self-awareness and perseverance through engaging play experiences.
             </p>
             
@@ -316,6 +481,81 @@
         </div>
     </section>
 
+    <!-- Skills Focus Section -->
+    <section class="skills-focus">
+        <div class="container">
+            <h2 class="section-title">CORE™ Skills Developed</h2>
+            <p class="section-subtitle">
+                Our learning games are specifically designed to develop key skills from the Cognitive and Operational pillars of the CORE™ Framework.
+            </p>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🧠</div>
+                    <h3>Critical Thinking</h3>
+                    <p>Games that challenge players to analyze information objectively, evaluate evidence, and make reasoned judgments through puzzle-solving and strategic decision-making.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">🔍</div>
+                    <h3>Problem Solving</h3>
+                    <p>Interactive challenges that teach systematic approaches to identifying problems, generating solutions, and implementing strategies through trial and improvement.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">✨</div>
+                    <h3>Creative Thinking</h3>
+                    <p>Open-ended gameplay that encourages original ideas, unconventional solutions, and thinking beyond traditional boundaries through imaginative scenarios.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">🎯</div>
+                    <h3>Planning & Goal Setting</h3>
+                    <p>Strategy games that develop the ability to envision desired outcomes, create pathways to achieve them, and organize resources effectively.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">🔬</div>
+                    <h3>Concentration & Memory</h3>
+                    <p>Focused gameplay that strengthens sustained attention while developing effective strategies for storing and retrieving information.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">🌟</div>
+                    <h3>Curiosity</h3>
+                    <p>Exploration-based games that foster intrinsic motivation to discover, investigate, and understand through active questioning and discovery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Examples Section -->
+    <section class="game-examples">
+        <div class="container">
+            <h2 class="section-title">Game Concepts in Development</h2>
+            <p class="section-subtitle">
+                Sneak peek at some of the engaging game experiences we're creating to develop essential skills.
+            </p>
+            
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-header">
+                        <div class="example-icon">🏛️</div>
+                        <h4>Mystery Academy</h4>
+                    </div>
+                    <p>
+                        Students become detectives solving mysteries around their school, requiring careful observation, logical reasoning, and evidence evaluation to uncover the truth.
+                    </p>
+                    <div class="example-skills">
+                        <span class="skill-tag">Creative Thinking</span>
+                        <span class="skill-tag">Planning & Goals</span>
+                        <span class="skill-tag">Curiosity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
         // Notify form submission
         document.getElementById('notifyForm').addEventListener('submit', function(e) {
@@ -324,7 +564,7 @@
             const emailInput = this.querySelector('.email-input');
             const successMessage = document.getElementById('successMessage');
             
-            // Store email in localStorage
+            // Store email in localStorage (avoiding browser storage restrictions)
             const notifications = JSON.parse(localStorage.getItem('notifications') || '[]');
             notifications.push({
                 email: emailInput.value,
@@ -342,6 +582,61 @@
                 successMessage.classList.remove('show');
             }, 5000);
         });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
     </script>
 </body>
 </html>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Concentration</span>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-header">
+                        <div class="example-icon">🌍</div>
+                        <h4>World Builder</h4>
+                    </div>
+                    <p>
+                        Create and manage virtual worlds where players design ecosystems, plan communities, and solve environmental challenges through creative and strategic thinking.
+                    </p>
+                    <div class="example-skills">
+                        <span class="skill-tag">Creative Thinking</span>
+                        <span class="skill-tag">Planning & Goals</span>
+                        <span class="skill-tag">Problem Solving</span>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-header">
+                        <div class="example-icon">🔬</div>
+                        <h4>Lab Quest</h4>
+                    </div>
+                    <p>
+                        Young scientists conduct virtual experiments, form hypotheses, and discover scientific principles through hands-on exploration and curious investigation.
+                    </p>
+                    <div class="example-skills">
+                        <span class="skill-tag">Curiosity</span>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Concentration</span>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-header">
+                        <div class="example-icon">🎨</div>
+                        <h4>Story Forge</h4>
+                    </div>
+                    <p>
+                        Interactive storytelling where players create characters, build narratives, and explore different plot possibilities through creative writing and planning.
+                    </p>
+                    <div class="example-skills">
