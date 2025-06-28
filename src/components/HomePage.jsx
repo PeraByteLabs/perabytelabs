@@ -23,7 +23,6 @@ const HomePage = ({ handlePageChange }) => {
 
       {/* Solution */}
       <section className="mb-5">
-        <h2 className="h4 text-primary mb-3">Solution</h2>
         <p className="lead">
           Introducing the Core Skills Framework — a science-backed, age-targeted skill development model designed to guide parents in raising whole children through playful, purposeful books and games.
           We focus on the 12 most essential lifelong skills children need to thrive — academically, socially, emotionally, and professionally.
