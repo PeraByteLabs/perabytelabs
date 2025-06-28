@@ -34,9 +34,9 @@ function App() {
   };
 
   return (
-    <div className="d-flex flex-column vh-100">
+    <div className="d-flex flex-column min-vh-100">
       <NavigationBar handlePageChange={handlePageChange} />
-      <div className="flex-grow-1">
+      <div className="flex-grow-1 py-4">
         {renderPage()}
       </div>
       <Footer />
