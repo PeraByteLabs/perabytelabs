@@ -1,6 +1,62 @@
 # Website Content
 
-## Page 1: Main Page
+## Launch Page
+
+### Headline
+Tomorrow’s Success Depends on More Than Just Knowing — It Starts with the Core Skills Framework
+
+### Situation
+In a world reshaped by AI, automation, and constant change, knowledge alone is no longer enough. Today’s children will enter a world where most future jobs don't exist yet, and adaptability, empathy, and resilience matter more than memorizing facts.
+
+### Complication
+But parents face a silent crisis. There is no structured, trusted, or science-backed guide for building the skills children truly need for life — just a flood of disconnected books, educational toys, and apps. Meanwhile, the pressure to prepare kids for an uncertain future is greater than ever.
+
+### Solution
+Introducing the Core Skills Framework — a science-backed, age-targeted skill development model designed to guide parents in raising whole children through playful, purposeful books and games. We focus on the 12 most essential lifelong skills children need to thrive — academically, socially, emotionally, and professionally.
+
+### Framework Introduction
+**What is the Core Skills Framework?**
+
+The Core Skills Framework stands for Cognitive, Operational, Relational, and Emotional — four developmental pillars that include 12 measurable, age-aligned skills:
+- 🧠 Cognitive: Critical Thinking, Problem Solving, Creative Thinking
+- 🛠️ Operational: Planning & Goal Setting, Concentration & Memory, Curiosity
+- 🤝 Relational: Cooperation & Teamwork, Communication, Conflict Resolution & Negotiation
+- 💪 Emotional: Self-Awareness & Control, Empathy & Perspective-Taking, Perseverance & Grit
+
+[Explore more about the Core Skills Framework](/skills)
+
+### Evidence & Credibility
+📚 **Backed by Research:**
+- UNICEF’s 12 Transferable Skills framework, OECD’s Learning Compass 2030, and CASEL’s SEL model all emphasize lifelong skills like empathy, critical thinking, and self-regulation.
+- According to the World Economic Forum, by 2025, 50% of all employees will need reskilling — and creativity, problem solving, and emotional intelligence top the list.
+- Harvard’s Center on the Developing Child stresses that executive function and SEL in early years predict academic and career success better than IQ.
+- Angela Duckworth (Grit), Carol Dweck (Growth Mindset), and other thought leaders emphasize persistence, adaptability, and lifelong curiosity as success multipliers.
+
+[Access Parent Resources for in-depth research](/resources)
+
+### Benefits for Parents & Children
+✅ **Why it Matters for You:**
+- You get structured, ready-to-use resources aligned with your child’s developmental stage — no more guesswork.
+- Your child builds a foundation not only for school success, but for life as a curious, resilient, emotionally intelligent person.
+- The Core Skills Framework isn’t just for kids. Many adults use our tools for their own personal development and parenting growth.
+- You become a more confident parent — with research-driven support behind every story and game you use.
+
+### Products
+
+#### Books
+Our books are designed to spark curiosity and imagination. We offer a range of coloring books and story books that are both entertaining and educational, aligned with the Core Skills Framework.
+[Explore Our Books](/books)
+
+#### Games
+We believe that games are a powerful tool for learning. Our games are designed to be fun and engaging, while also teaching children the 12 core skills in an interactive way.
+[Explore Our Games](/games)
+
+### Call to Action:
+(Placeholder for specific call to action, e.g., "Sign Up for Our Newsletter", "Browse Our Products")
+
+---
+
+## Page 1: Main Page (Now serves as the primary navigation hub)
 
 **Headline:** Empowering the Next Generation with the 12 Core Skills for the AI Age
 
