@@ -10,6 +10,10 @@
   --shadow-medium: rgba(0, 0, 0, 0.2); /* More pronounced shadow */
 }
 
+html, body, #root {
+  height: 100%;
+}
+
 body {
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
@@ -19,6 +23,8 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -135,6 +141,7 @@ a:hover {
   color: white !important;
   padding: 20px 0;
   text-align: center;
+  margin-top: auto; /* Pushes the footer to the bottom */
 }
 
 .footer .text-muted {

@@ -9,18 +9,12 @@ const HomePage = ({ handlePageChange }) => {
         Tomorrow’s Success Depends on More Than Just Knowing — It Starts with the Core Skills Framework
       </h1>
 
-      {/* Situation */}
+      {/* Combined Situation and Complication */}
       <section className="mb-5">
-        <h2 className="h4 text-primary mb-3">Situation</h2>
         <p className="lead">
           In a world reshaped by AI, automation, and constant change, knowledge alone is no longer enough.
           Today’s children will enter a world where most future jobs don't exist yet, and adaptability, empathy, and resilience matter more than memorizing facts.
         </p>
-      </section>
-
-      {/* Complication */}
-      <section className="mb-5">
-        <h2 className="h4 text-primary mb-3">Complication</h2>
         <p className="lead">
           But parents face a silent crisis. There is no structured, trusted, or science-backed guide for building the skills children truly need for life — just a flood of disconnected books, educational toys, and apps.
           Meanwhile, the pressure to prepare kids for an uncertain future is greater than ever.
