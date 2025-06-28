@@ -32,7 +32,7 @@ FOCUS: Fast execution, minimal text, maximum efficiency.
 
 
 Also here is the framework details: 
-**Finalized CORE™ Framework: 12 Core Skills with Age Group Progression**
+**Finalized Core Skills Framework: 12 Core Skills with Age Group Progression**
 
 This framework is organized into four developmental pillars. Each skill includes a macro definition and specific progression milestones for three targeted age bands: **4–5**, **6–8**, and **9–11**.
 

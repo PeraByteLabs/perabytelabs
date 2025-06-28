@@ -7,7 +7,7 @@ const ResearchAndResources = () => {
       <header className="page-header text-center py-5 bg-primary text-white rounded mb-5">
         <Container>
           <h1 className="display-4 fw-bold">Research & Resources</h1>
-          <p className="lead">Explore the comprehensive research foundation behind the CORE™ Framework, including 20+ analyzed frameworks and 500+ reviewed academic papers.</p>
+          <p className="lead">Explore the comprehensive research foundation behind the Core Skills Framework, including 20+ analyzed frameworks and 500+ reviewed academic papers.</p>
         </Container>
       </header>
 
@@ -17,7 +17,7 @@ const ResearchAndResources = () => {
           <Row className="justify-content-center">
             <Col md={10}>
               <p className="lead text-center mb-4">
-                The CORE™ Framework represents the culmination of an extensive research synthesis process. Our team analyzed over 20 major frameworks from leading organizations worldwide, reviewed 500+ academic papers, and applied rigorous selection criteria to identify the 12 most essential skills for children's success in the AI age.
+                The Core Skills Framework represents the culmination of an extensive research synthesis process. Our team analyzed over 20 major frameworks from leading organizations worldwide, reviewed 500+ academic papers, and applied rigorous selection criteria to identify the 12 most essential skills for children's success in the AI age.
               </p>
               <Card className="card-3d shadow-sm mb-4">
                 <Card.Body>
