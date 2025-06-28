@@ -34,7 +34,7 @@ const BooksPage = () => {
       title: 'The Girl Who Asked Why',
       description: 'An adventurous tale that encourages curiosity and critical thinking.',
       link: '#',
-      image: 'https://via.placeholder.com/150/FFD700/000000?text=Story+Book+2', // Placeholder image
+      image: "https://via.placeholder.com/150/FFD700/000000?text=Story+Book+2", // Placeholder image
     },
     {
       title: 'The Boy Who Built a Team',
