@@ -5,7 +5,7 @@ const GamesPage = () => {
   const games = [
     {
       title: 'The Creative Problem Solvers',
-      description: 'A game designed to challenge children's creative thinking and problem-solving abilities through engaging puzzles and scenarios.',
+      description: "A game designed to challenge children's creative thinking and problem-solving abilities through engaging puzzles and scenarios.",
       link: '#',
       icon: '💡',
     },
