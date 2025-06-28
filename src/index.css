@@ -172,3 +172,42 @@ a:hover {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
+
+/* How It Works Section */
+.how-it-works-step {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.how-it-works-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px var(--shadow-medium), 0 10px 10px var(--shadow-light);
+}
+
+/* Featured Products Section */
+.featured-products-section .card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* Science Behind It Section */
+.science-visual-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+/* Testimonials Section */
+.testimonials-section .card {
+  border: none;
+  background-color: #fff;
+}
+
+/* Call to Action Section */
+.call-to-action-section {
+  background: linear-gradient(135deg, #28a745 0%, #218838 100%); /* Green gradient */
+}
