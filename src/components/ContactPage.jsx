@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Form, Button, Card, Alert } from 'react-bootstrap';
+import { Container, Form, Button, Card, Alert, Row, Col } from 'react-bootstrap';
 
 const ContactPage = () => {
   const [showSuccess, setShowSuccess] = useState(false);
