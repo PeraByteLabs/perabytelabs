@@ -1,87 +1,77 @@
-import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Button, Modal } from 'react-bootstrap';
+import { allBooks } from '../data/booksData';
 
 const BooksPage = () => {
-  const coloringBooks = [
-    {
-      title: 'The Mindful Artist',
-      description: 'A coloring book designed to promote mindfulness and artistic expression.',
-      link: '#',
-      image: 'https://via.placeholder.com/150/FFC0CB/000000?text=Coloring+Book+1', // Placeholder image
-    },
-    {
-      title: 'The Curious Explorer',
-      description: 'Explore new worlds and concepts through coloring, fostering curiosity and learning.',
-      link: '#',
-      image: 'https://via.placeholder.com/150/ADD8E6/000000?text=Coloring+Book+2', // Placeholder image
-    },
-    {
-      title: 'The Cooperative Creator',
-      description: 'Coloring activities that encourage teamwork and collaborative creativity.',
-      link: '#',
-      image: 'https://via.placeholder.com/150/90EE90/000000?text=Coloring+Book+3', // Placeholder image
-    },
-  ];
+  const [showModal, setShowModal] = useState(false);
+  const [selectedBook, setSelectedBook] = useState(null);
 
-  const storyBooks = [
-    {
-      title: 'The Little Robot Who Could',
-      description: 'A heartwarming story about perseverance and overcoming challenges.',
-      link: '#',
-      image: 'https://via.placeholder.com/150/DDA0DD/000000?text=Story+Book+1', // Placeholder image
-    },
-    {
-      title: 'The Girl Who Asked Why',
-      description: 'An adventurous tale that encourages curiosity and critical thinking.',
-      link: '#',
-      image: "https://via.placeholder.com/150/FFD700/000000?text=Story+Book+2", // Placeholder image
-    },
-    {
-      title: 'The Boy Who Built a Team',
-      description: 'A story about leadership, cooperation, and the power of working together.',
-      link: '#',
-      image: 'https://via.placeholder.com/150/FFA07A/000000?text=Story+Book+3', // Placeholder image
-    },
-  ];
+  const handleShowModal = (book) => {
+    setSelectedBook(book);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => setShowModal(false);
+
+  const coloringBooks = allBooks.filter(book => book.type === 'coloring');
+  const storyBooks = allBooks.filter(book => book.type === 'story');
 
   return (
     <Container className="my-5">
       <h1 className="text-center mb-4">Inspiring a Love of Reading</h1>
       <p className="lead text-center mb-5">
-        Our books are designed to spark curiosity and imagination. We offer a range of coloring books and story books that are both entertaining and educational.
+        Our books are designed to spark curiosity and imagination, aligning with the 12 core skills. We offer a range of coloring books and story books that are both entertaining and educational, fostering a love for reading and learning.
       </p>
 
-      <h2 className="mb-4">Coloring Books</h2>
+      {/* Coloring Books Section */}
+      <h2 className="text-center mb-4">Coloring Books</h2>
       <Row xs={1} md={2} lg={3} className="g-4 mb-5">
-        {coloringBooks.map((book, index) => (
-          <Col key={index}>
-            <Card className="card-3d h-100">
+        {coloringBooks.map((book) => (
+          <Col key={book.id}>
+            <Card className="card-3d h-100 text-center">
               <Card.Img variant="top" src={book.image} alt={book.title} />
-              <Card.Body className="text-center">
+              <Card.Body>
                 <Card.Title as="h5">{book.title}</Card.Title>
-                <Card.Text>{book.description}</Card.Text>
-                <a href={book.link} className="btn btn-primary mt-3">View on Amazon</a>
+                <Card.Text>{book.description.substring(0, 100)}...</Card.Text>
+                <Button variant="primary" onClick={() => handleShowModal(book)}>More Info</Button>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
 
-      <h2 className="mb-4">Story Books</h2>
+      {/* Story Books Section */}
+      <h2 className="text-center mb-4">Story Books</h2>
       <Row xs={1} md={2} lg={3} className="g-4">
-        {storyBooks.map((book, index) => (
-          <Col key={index}>
-            <Card className="card-3d h-100">
+        {storyBooks.map((book) => (
+          <Col key={book.id}>
+            <Card className="card-3d h-100 text-center">
               <Card.Img variant="top" src={book.image} alt={book.title} />
-              <Card.Body className="text-center">
+              <Card.Body>
                 <Card.Title as="h5">{book.title}</Card.Title>
-                <Card.Text>{book.description}</Card.Text>
-                <a href={book.link} className="btn btn-primary mt-3">View on Amazon</a>
+                <Card.Text>{book.description.substring(0, 100)}...</Card.Text>
+                <Button variant="primary" onClick={() => handleShowModal(book)}>More Info</Button>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
+
+      {/* Book Details Modal */}
+      <Modal show={showModal} onHide={handleCloseModal} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>{selectedBook?.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <img src={selectedBook?.image} alt={selectedBook?.title} className="img-fluid mb-3" />
+          <p><strong>Skill Focus:</strong> {selectedBook?.skill}</p>
+          <p>{selectedBook?.description}</p>
+          <a href={selectedBook?.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">View on Amazon</a>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>Close</Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };
