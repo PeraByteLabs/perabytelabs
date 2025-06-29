@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.7",
+    "framer-motion": "^12.19.2",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {

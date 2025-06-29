@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Modal } from 'react-bootstrap';
-import { digitalGames, nonDigitalGames } from '../data/gamesData';
+import { digitalGames } from '../data/gamesData';
+import { skillsData } from '../data/skillsData';
+import './SkillsGrid.css'; // Re-using the CSS for card styling
 
 const GamesPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -13,48 +15,53 @@ const GamesPage = () => {
 
   const handleCloseModal = () => setShowModal(false);
 
+  // Group digital games by skill for display
+  const gamesBySkill = skillsData.map(pillar => ({
+    ...pillar,
+    skills: pillar.skills.map(skill => ({
+      ...skill,
+      games: digitalGames.filter(game => game.skill === skill.name),
+      pillarShort: pillar.pillar.split(' ')[0].toLowerCase().replace('🧠', 'cognitive').replace('🔧', 'operational').replace('🤝', 'relational').replace('💪', 'emotional') // For CSS classes
+    }))
+  }));
+
   return (
     <Container className="my-5">
       <h1 className="text-center mb-4">Learning Through Play: Our Educational Games</h1>
       <p className="lead text-center mb-5">
         We believe that games are a powerful tool for learning. Our digital games are designed to be fun and engaging, while also teaching children the 12 core skills. We work with child development experts to create games that are age-appropriate and effective.
-        Additionally, we provide a comprehensive collection of non-digital games and activities to foster skill development in real-life settings.
       </p>
 
-      {/* Digital Games Section */}
-      <h2 className="text-center mb-4">Digital Games</h2>
-      <Row xs={1} md={2} lg={3} className="g-4 mb-5">
-        {digitalGames.map((game) => (
-          <Col key={game.id}>
-            <Card className="card-3d h-100 text-center">
-              <Card.Img variant="top" src={game.image} alt={game.title} />
-              <Card.Body>
-                <Card.Title as="h5">{game.title}</Card.Title>
-                <Card.Text>{game.description.substring(0, 100)}...</Card.Text>
-                <Button variant="primary" onClick={() => handleShowModal(game)}>More Info</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-
-      {/* Non-Digital Games Section */}
-      <h2 className="text-center mb-4">Non-Digital Games & Activities</h2>
-      <p className="lead text-center mb-5">
-        Beyond digital experiences, we offer a vast library of real-life games and activities, categorized by skill, to encourage hands-on learning and development.
-      </p>
-      {nonDigitalGames.map(pillar => (
-        <div key={pillar.pillar} className="mb-4">
-          <h3>{pillar.pillar}</h3>
+      {gamesBySkill.map(pillar => (
+        <div key={pillar.pillar} className="mb-5">
+          <h2 className="text-center mb-4">{pillar.pillar.replace('🧠 ', '').replace('🔧 ', '').replace('🤝 ', '').replace('💪 ', '')}</h2>
           {pillar.skills.map(skill => (
-            <div key={skill.name} className="mb-3">
-              <h4>{skill.name} Activities</h4>
-              <ul>
-                {skill.activities.slice(0, 5).map(activity => ( // Displaying first 5 activities for brevity
-                  <li key={activity.id}>{activity.title}: {activity.description}</li>
+            <div key={skill.name} className="mb-4">
+              <h3>{skill.name} Games</h3>
+              <Row xs={1} md={2} lg={3} className="g-4">
+                {skill.games.map(game => (
+                  <Col key={game.id}>
+                    <div className={`skill-card ${skill.pillarShort}`}> {/* Re-using skill-card for hover effects */}
+                      <Card className="skill-card-inner h-100 text-center"> {/* Re-using skill-card-inner */}
+                        <Card.Img variant="top" src={game.image} alt={game.title} />
+                        <Card.Body>
+                          <div className="skill-content-wrapper"> {/* Re-using skill-content-wrapper */}
+                            <div className="category-label">
+                              {skill.pillar.split(' ')[0]} {skill.pillar.split(' ')[1].replace('COGNITIVE', 'Cognitive').replace('OPERATIONAL', 'Operational').replace('RELATIONAL', 'Relational').replace('EMOTIONAL', 'Emotional')}
+                            </div>
+                            <Card.Title as="h5">{game.title}</Card.Title>
+                            <Card.Text className="short-summary">{game.description.substring(0, 100)}...</Card.Text>
+                            <Card.Text className="detailed-description">
+                              {game.description}
+                            </Card.Text>
+                            <Button variant="primary" onClick={() => handleShowModal(game)} className="mt-3">More Info</Button>
+                          </div>
+                        </Card.Body>
+                      </Card>
+                    </div>
+                  </Col>
                 ))}
-                {/* Add a button to show all 200 activities if needed */}
-              </ul>
+              </Row>
             </div>
           ))}
         </div>

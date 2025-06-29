@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Modal } from 'react-bootstrap';
 import { allBooks } from '../data/booksData';
+import { skillsData } from '../data/skillsData';
+import './SkillsGrid.css'; // Re-using the CSS for card styling
 
 const BooksPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -13,49 +15,57 @@ const BooksPage = () => {
 
   const handleCloseModal = () => setShowModal(false);
 
-  const coloringBooks = allBooks.filter(book => book.type === 'coloring');
-  const storyBooks = allBooks.filter(book => book.type === 'story');
+  // Group books by skill for display
+  const booksBySkill = skillsData.map(pillar => ({
+    ...pillar,
+    skills: pillar.skills.map(skill => ({
+      ...skill,
+      books: allBooks.filter(book => book.skill === skill.name),
+      pillarShort: pillar.pillar.split(' ')[0].toLowerCase().replace('🧠', 'cognitive').replace('🔧', 'operational').replace('🤝', 'relational').replace('💪', 'emotional') // For CSS classes
+    }))
+  }));
 
   return (
     <Container className="my-5">
       <h1 className="text-center mb-4">Inspiring a Love of Reading</h1>
       <p className="lead text-center mb-5">
-        Our books are designed to spark curiosity and imagination, aligning with the 12 core skills. We offer a range of coloring books and story books that are both entertaining and educational, fostering a love for reading and learning.
+        Our books are designed to spark curiosity and imagination. We offer a range of coloring books and story books that are both entertaining and educational.
       </p>
 
-      {/* Coloring Books Section */}
-      <h2 className="text-center mb-4">Coloring Books</h2>
-      <Row xs={1} md={2} lg={3} className="g-4 mb-5">
-        {coloringBooks.map((book) => (
-          <Col key={book.id}>
-            <Card className="card-3d h-100 text-center">
-              <Card.Img variant="top" src={book.image} alt={book.title} />
-              <Card.Body>
-                <Card.Title as="h5">{book.title}</Card.Title>
-                <Card.Text>{book.description.substring(0, 100)}...</Card.Text>
-                <Button variant="primary" onClick={() => handleShowModal(book)}>More Info</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-
-      {/* Story Books Section */}
-      <h2 className="text-center mb-4">Story Books</h2>
-      <Row xs={1} md={2} lg={3} className="g-4">
-        {storyBooks.map((book) => (
-          <Col key={book.id}>
-            <Card className="card-3d h-100 text-center">
-              <Card.Img variant="top" src={book.image} alt={book.title} />
-              <Card.Body>
-                <Card.Title as="h5">{book.title}</Card.Title>
-                <Card.Text>{book.description.substring(0, 100)}...</Card.Text>
-                <Button variant="primary" onClick={() => handleShowModal(book)}>More Info</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+      {booksBySkill.map(pillar => (
+        <div key={pillar.pillar} className="mb-5">
+          <h2 className="text-center mb-4">{pillar.pillar.replace('🧠 ', '').replace('🔧 ', '').replace('🤝 ', '').replace('💪 ', '')}</h2>
+          {pillar.skills.map(skill => (
+            <div key={skill.name} className="mb-4">
+              <h3>{skill.name}</h3>
+              <Row xs={1} md={2} lg={3} className="g-4">
+                {skill.books.map(book => (
+                  <Col key={book.id}>
+                    <div className={`skill-card ${skill.pillarShort}`}> {/* Re-using skill-card for hover effects */}
+                      <Card className="skill-card-inner h-100 text-center"> {/* Re-using skill-card-inner */}
+                        <Card.Img variant="top" src={book.image} alt={book.title} />
+                        <Card.Body>
+                          <div className="skill-content-wrapper"> {/* Re-using skill-content-wrapper */}
+                            <div className="category-label">
+                              {skill.pillar.split(' ')[0]} {skill.pillar.split(' ')[1].replace('COGNITIVE', 'Cognitive').replace('OPERATIONAL', 'Operational').replace('RELATIONAL', 'Relational').replace('EMOTIONAL', 'Emotional')}
+                            </div>
+                            <Card.Title as="h5">{book.title}</Card.Title>
+                            <Card.Text className="short-summary">{book.description.substring(0, 100)}...</Card.Text>
+                            <Card.Text className="detailed-description">
+                              {book.description}
+                            </Card.Text>
+                            <Button variant="primary" onClick={() => handleShowModal(book)} className="mt-3">More Info</Button>
+                          </div>
+                        </Card.Body>
+                      </Card>
+                    </div>
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          ))}
+        </div>
+      ))}
 
       {/* Book Details Modal */}
       <Modal show={showModal} onHide={handleCloseModal} centered>

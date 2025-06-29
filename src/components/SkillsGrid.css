@@ -1,0 +1,124 @@
+/* SkillsGrid.css */
+
+.filter-controls {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.filter-controls .btn {
+  margin: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.skill-card {
+  /* This is the outermost wrapper div and the hover target */
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative; /* Needed for absolute positioning of category label */
+  pointer-events: auto; /* Ensure it's a target for mouse events */
+}
+
+.skill-card-inner {
+  /* This is the actual Card component */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: 100%; /* Ensure it fills the parent div */
+  /* Transitions for background color only */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.skill-content-wrapper {
+  /* This is the new inner wrapper for content that will be transformed */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 100%; /* Ensure it fills the parent */
+  display: flex; /* Use flexbox to ensure content fills space */
+  flex-direction: column;
+}
+
+.skill-card:hover .skill-content-wrapper {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card-inner .card-body {
+  padding: 1.5rem;
+  padding-bottom: 40px; /* Increased space for the label */
+  flex-grow: 1; /* Allow body to grow and fill space */
+}
+
+.skill-card-inner .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-card-inner .short-summary {
+  display: block; /* Always visible */
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.skill-card:hover .skill-card-inner .short-summary {
+  display: none;
+}
+
+.skill-card-inner .detailed-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+.skill-card:hover .skill-card-inner .detailed-description {
+  max-height: 200px; /* Adjust based on content */
+  opacity: 1;
+}
+
+/* Category Label */
+.skill-card-inner .category-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1; /* Ensure it's above other content */
+}
+
+/* Category specific colors for background and label */
+.skill-card.cognitive .skill-card-inner {
+  background-color: #e6ffe6; /* Light green */
+}
+.skill-card.cognitive:hover .skill-card-inner { filter: brightness(95%); }
+.skill-card.cognitive .category-label { background-color: #28a745; } /* Green */
+
+.skill-card.operational .skill-card-inner {
+  background-color: #fffacd; /* Light yellow */
+}
+.skill-card.operational:hover .skill-card-inner { filter: brightness(95%); }
+.skill-card.operational .category-label { background-color: #ffc107; } /* Yellow */
+
+.skill-card.relational .skill-card-inner {
+  background-color: #e0ffff; /* Light cyan */
+}
+.skill-card.relational:hover .skill-card-inner { filter: brightness(95%); }
+.skill-card.relational .category-label { background-color: #17a2b8; } /* Cyan */
+
+.skill-card.emotional .skill-card-inner {
+  background-color: #ffe6e6; /* Light red */
+}
+.skill-card.emotional:hover .skill-card-inner { filter: brightness(95%); }
+.skill-card.emotional .category-label { background-color: #dc3545; } /* Red */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skill-card {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,11 +1,47 @@
 import React from 'react';
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import { CountUp } from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 
 const HomePage = ({ handlePageChange }) => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const testimonials = [
+    {
+      quote: "I finally know how to help my child grow skills that matter.",
+      author: "— Happy Parent",
+      image: "https://via.placeholder.com/100?text=Parent1",
+    },
+    {
+      quote: "Our students are more engaged and confident thanks to Perabyte Labs.",
+      author: "— Educator, Elementary School",
+      image: "https://via.placeholder.com/100?text=Educator1",
+    },
+    {
+      quote: "Learning is so much fun now!",
+      author: "— Alex, Age 7",
+      image: "https://via.placeholder.com/100?text=Child1",
+    },
+  ];
+
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when the element enters the viewport
+    threshold: 0.5, // Trigger when 50% of the element is visible
+  });
+
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-section text-center py-5 bg-primary text-white d-flex align-items-center justify-content-center">
+      <motion.section
+        className="hero-section text-center py-5 bg-primary text-white d-flex align-items-center justify-content-center"
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+      >
         <Container>
           <Row className="align-items-center">
             <Col md={7} className="text-md-start">
@@ -24,10 +60,16 @@ const HomePage = ({ handlePageChange }) => {
             </Col>
           </Row>
         </Container>
-      </section>
+      </motion.section>
 
       {/* Value Proposition Grid */}
-      <section className="value-proposition-section py-5 bg-light">
+      <motion.section
+        className="value-proposition-section py-5 bg-light"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+      >
         <Container>
           <Row className="g-4 text-center">
             <Col md={4}>
@@ -59,10 +101,16 @@ const HomePage = ({ handlePageChange }) => {
             </Col>
           </Row>
         </Container>
-      </section>
+      </motion.section>
 
       {/* How It Works - Visual Journey */}
-      <section className="how-it-works-section py-5">
+      <motion.section
+        className="how-it-works-section py-5"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+      >
         <Container>
           <h2 className="text-center mb-5 display-5 fw-bold">How It Works</h2>
           <Row className="g-4 text-center">
@@ -89,10 +137,16 @@ const HomePage = ({ handlePageChange }) => {
             </Col>
           </Row>
         </Container>
-      </section>
+      </motion.section>
 
       {/* Featured Products - Interactive Grid */}
-      <section className="featured-products-section py-5 bg-light">
+      <motion.section
+        className="featured-products-section py-5 bg-light"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+      >
         <Container>
           <h2 className="text-center mb-5 display-5 fw-bold">Featured Products</h2>
           <Row className="g-4 justify-content-center">
@@ -118,17 +172,37 @@ const HomePage = ({ handlePageChange }) => {
             </Col>
           </Row>
         </Container>
-      </section>
+      </motion.section>
 
       {/* The Science Behind It - Infographic Style Block */}
-      <section className="science-behind-it-section py-5">
+      <motion.section
+        className="science-behind-it-section py-5"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+        ref={ref}
+      >
         <Container>
           <h2 className="text-center mb-5 display-5 fw-bold">The Science Behind It</h2>
           <Row className="align-items-center">
             <Col md={6}>
-              {/* Placeholder for Visual timeline or infographic */}
-              <div className="science-visual-placeholder rounded shadow-lg mb-4 mb-md-0" style={{ height: '300px', backgroundColor: 'rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span className="display-1">📊</span>
+              <div className="science-visual-placeholder rounded shadow-lg mb-4 mb-md-0 p-4">
+                <h3 className="text-center mb-3">Key Metrics</h3>
+                <div className="d-flex flex-column align-items-center justify-content-center">
+                  <div className="metric mb-3">
+                    <span className="display-4 fw-bold text-primary">
+                      {inView && <CountUp end={89} duration={2} suffix="%" />}
+                    </span>
+                    <p className="lead">of high achievers show emotional intelligence</p>
+                  </div>
+                  <div className="metric">
+                    <span className="display-4 fw-bold text-success">
+                      {inView && <CountUp end={12} duration={2} />}
+                    </span>
+                    <p className="lead">Core Skills your child will master</p>
+                  </div>
+                </div>
               </div>
             </Col>
             <Col md={6}>
@@ -143,27 +217,44 @@ const HomePage = ({ handlePageChange }) => {
             </Col>
           </Row>
         </Container>
-      </section>
+      </motion.section>
 
       {/* Testimonials Carousel */}
-      <section className="testimonials-section py-5 bg-light">
+      <motion.section
+        className="testimonials-section py-5 bg-light"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+      >
         <Container>
           <h2 className="text-center mb-5 display-5 fw-bold">What Parents and Educators Say</h2>
-          <Row className="justify-content-center">
+          <Row className="justify-content="center">
             <Col md={8}>
-              {/* Placeholder for Carousel - will need react-bootstrap Carousel component */}
-              <div className="p-4 rounded shadow-sm bg-white text-center">
-                <p className="lead fst-italic mb-3">“I finally know how to help my child grow skills that matter.”</p>
-                <p className="fw-bold">— Happy Parent</p>
-              </div>
-              {/* More testimonials would go here in a carousel */}
+              <Carousel indicators={false} controls={false} interval={5000} pause={false} className="testimonial-carousel">
+                {testimonials.map((testimonial, index) => (
+                  <Carousel.Item key={index}>
+                    <div className="p-4 rounded shadow-sm bg-white text-center">
+                      <img src={testimonial.image} alt={testimonial.author} className="rounded-circle mb-3" style={{ width: '80px', height: '80px', objectFit: 'cover' }} />
+                      <p className="lead fst-italic mb-3">{testimonial.quote}</p>
+                      <p className="fw-bold">{testimonial.author}</p>
+                    </div>
+                  </Carousel.Item>
+                ))}
+              </Carousel>
             </Col>
           </Row>
         </Container>
-      </section>
+      </motion.section>
 
       {/* Call to Action - Big Emotional Prompt */}
-      <section className="call-to-action-section py-5 bg-primary text-white text-center">
+      <motion.section
+        className="call-to-action-section py-5 bg-primary text-white text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+      >
         <Container>
           <h2 className="display-5 fw-bold mb-4">Your Child Deserves More Than Just Screen Time.</h2>
           <p className="lead mb-5">Start Their Learning Adventure Today.</p>
@@ -172,7 +263,7 @@ const HomePage = ({ handlePageChange }) => {
             <Button variant="outline-light" size="lg" onClick={() => handlePageChange('contact')}>Take the Free Skill Quiz</Button>
           </div>
         </Container>
-      </section>
+      </motion.section>
     </>
   );
 };
