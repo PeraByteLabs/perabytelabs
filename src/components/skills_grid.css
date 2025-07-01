@@ -1,0 +1,53 @@
+/* SkillsGrid.css */
+
+.filter-controls {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.filter-controls .btn {
+  margin: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.skill-card {
+  /* This is the outermost wrapper div and the hover target */
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Ensure smooth hover detection */
+  pointer-events: auto;
+}
+
+.skill-card-inner {
+  /* This is the actual Card component */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: 100%;
+  /* Simplified transitions to prevent conflicts */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /* Add will-change for better performance */
+  will-change: transform, box-shadow;
+}
+
+.skill-content-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Only transition opacity for content changes */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Simplified hover effect - only transform the card-inner */
+.skill-card:hover .skill-card-inner {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card-inner .card-body {
+  padding: 1.5rem;
+  padding-bottom: 40px;
+  flex-grow: 1;
+  position: relative; /* For absolute positioning of category 
